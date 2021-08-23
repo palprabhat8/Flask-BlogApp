@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+HomePage
+{% endblock %}
+
+{% block content %}
+ <div class="jumbotron text-center">
+    <h1>Welcome To BlogApp</h1>
+    <p class="lead">Use this site for getting latest blogs from top blogger and Create  your Own</p>
+    {% if current_user.is_authenticated %}
+    <p> Click on blogs to see all Posts</p>
+    {% else %}
+    <p> Login to create posts</p>
+    {% endif %}
+  </div>
+{% endblock %}

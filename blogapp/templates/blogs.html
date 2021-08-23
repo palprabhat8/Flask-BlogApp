@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+Blogs
+{% endblock %}
+
+{% block content %}
+<h1>All Latest Blogs</h1>
+  <ul class="list-group">
+    {% for blog in blogs_list %}
+      <li class="list-group-item"><a href="blog/{{blog.id}}">{{blog.title}}</a></li>
+      <li class="list-group-item"><p> {{blog.text[:180] | safe}}<strong>...</strong></p></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
